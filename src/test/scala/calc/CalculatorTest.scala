@@ -37,6 +37,13 @@ class CalculatorTest  extends FlatSpec with Matchers {
     calc.div(10,10) should be (1);
     calc.div(-10, 100) should be (-0.1);
     calc.div(5,1) should be (5);
+
+  }
+
+  it should "get an error when divide by zero" in {
+    a [RuntimeException] should be thrownBy {
+      calc.div(100,0);
+    }
   }
 }
 
